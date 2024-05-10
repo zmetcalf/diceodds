@@ -10,7 +10,7 @@ func TestRoll(t *testing.T) {
 	}
 
 	if result[0] != 0 {
-		t.Errorf("Expected 0, got %d", result[0])
+		t.Errorf("Expected no instances of zero, got %d", result[0])
 	}
 
 	if result[1] == 0 {

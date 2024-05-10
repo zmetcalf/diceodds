@@ -19,7 +19,7 @@ func main() {
 			}
 
 			for k, v := range toughness {
-				toughness[k] = dice.SetHitMiss(&v, die_total, modifier, k)
+				toughness[k] = v.SetHitMiss(die_total, modifier, k)
 			}
 		}
 

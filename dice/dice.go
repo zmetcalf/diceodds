@@ -39,7 +39,7 @@ func ExplodingRoll(sides int, starting int64) int64 {
 	return die
 }
 
-func SetHitMiss(results *SWDamageResult, die_total int64, modifier int64, toughness int) SWDamageResult {
+func (results *SWDamageResult) SetHitMiss(die_total int64, modifier int64, toughness int) SWDamageResult {
 	res := SWDamageResult{Hit: results.Hit, Miss: results.Miss, Toughness: toughness}
 	if die_total+modifier >= int64(toughness) {
 		res.Hit++
