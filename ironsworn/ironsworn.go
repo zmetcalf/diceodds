@@ -5,21 +5,23 @@ import (
 )
 
 func main() {
-	results := dice.PbtaResult{}
-	rolls := 1000000
-	var modifier int64 = 3
+	results := dice.PbtaResult{Params: dice.PbtaParams{
+		Modifier:   3,
+		Thresholds: []int64{6, 9},
+		Rolls:      1000000,
+	}}
 
-	for i := 0; i < rolls; i++ {
+	for i := 0; i < results.Params.Rolls; i++ {
 		challenge1 := dice.Roll(10, 1)
 		challenge2 := dice.Roll(10, 1)
 		action := dice.Roll(6, 1)
 
-		if challenge1 < action+modifier && challenge2 < action+modifier {
+		if challenge1 < action+results.Params.Modifier && challenge2 < action+results.Params.Modifier {
 			results.Strong++
 			if challenge1 == challenge2 {
 				results.StrongMatch++
 			}
-		} else if challenge1 < action+modifier || challenge2 < action+modifier {
+		} else if challenge1 < action+results.Params.Modifier || challenge2 < action+results.Params.Modifier {
 			results.Weak++
 		} else {
 			results.Miss++
@@ -29,6 +31,6 @@ func main() {
 		}
 	}
 
-	results.Display(rolls)
-	results.DisplayMatch(rolls)
+	results.Display()
+	results.DisplayMatch()
 }
