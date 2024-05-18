@@ -7,7 +7,7 @@ import (
 func main() {
 	results := dice.PbtaResult{Strong: 0, Weak: 0, Miss: 0, StrongMatch: 0, MissMatch: 0}
 	rolls := 1000000
-	var modifier int64 = 2
+	var modifier int64 = 3
 
 	for i := 0; i < rolls; i++ {
 		challenge1 := dice.Roll(10, 1)
