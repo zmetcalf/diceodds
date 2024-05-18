@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	results := dice.PbtaResult{Strong: 0, Weak: 0, Miss: 0, StrongMatch: 0, MissMatch: 0}
+	results := dice.PbtaResult{}
 	rolls := 1000000
 	var modifier int64 = 3
 
