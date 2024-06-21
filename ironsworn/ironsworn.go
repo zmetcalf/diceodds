@@ -6,9 +6,8 @@ import (
 
 func main() {
 	results := dice.PbtaResult{Params: dice.PbtaParams{
-		Modifier:   3,
-		Thresholds: []int64{6, 9},
-		Rolls:      1000000,
+		Modifier: 3,
+		Rolls:    1000000,
 	}}
 
 	for i := 0; i < results.Params.Rolls; i++ {
