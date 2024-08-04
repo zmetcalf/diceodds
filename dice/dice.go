@@ -5,10 +5,11 @@ import (
 	"math/big"
 )
 
-type SWDamageResult struct {
-	Hit       int
-	Miss      int
-	Toughness int
+type CheckResult struct {
+	Hit        int
+	Raised     int
+	MultiRaise int
+	Miss       int
 }
 
 func Roll(sides int, starting int64) int64 {
